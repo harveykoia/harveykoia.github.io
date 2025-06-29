@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- Mobile theme-color meta tags -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1e1e1e" media="(prefers-color-scheme: dark)">
+
+  <!-- SEO & Social-Share Meta Tags -->
+  <meta name="description" content="Senior Counter Sales at Active Electrical Suppliers. Expert in switchgear, distribution boards & wiring solutions.">
+  <meta property="og:title" content="Harvey Koia – Electrical Wholesale Specialist">
+  <meta property="og:description" content="Expert counter-sales professional delivering tailored quotes and technical guidance in NZ’s electrical wholesale sector.">
+  <meta property="og:image" content="https://harveykoia.github.io/og-image.png">
+  <link rel="canonical" href="https://harveykoia.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Harvey Koia – Electrical Wholesale Specialist">
+  <meta name="twitter:description" content="Expert counter-sales professional delivering tailored quotes & technical guidance.">
+  <meta name="twitter:image" content="https://harveykoia.github.io/og-image.png">
+
+  <!-- Preconnect/DNS-Prefetch -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <title>Harvey Koia | Electrical Wholesale Specialist</title>
+
+  <!-- Inline Styles -->
+  <style>
+    /* Preload fonts */
+    @font-face { font-family: 'Roboto'; src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); font-display: swap; }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Theme variables */
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --accent: #00bcd4;
+      --subtext: #666666;
+      --header-bg: #f9f9f9;
+      --card-bg: #f9f9f9;
+    }
+    .dark {
+      --bg: #1e1e1e;
+      --fg: #e0e0e0;
+      --accent: #00bcd4;
+      --subtext: #999999;
+      --header-bg: #2a2a2a;
+      --card-bg: #2a2a2a;
+    }
+
+    /* Base */
+    body {
+      margin:0; padding:0;
+      background: var(--bg); color: var(--fg);
+      font-family: 'Roboto', sans-serif;
+      line-height:1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    .container { max-width:900px; margin:auto; padding:40px 20px; }
+
+    /* Sticky Header with backdrop */
+    header {
+      position: sticky; top:0; z-index:100;
+      display:flex; justify-content: space-between; align-items:center; flex-wrap:wrap;
+      padding:20px; background: var(--header-bg);
+      backdrop-filter: saturate(180%) blur(10px);
+      transition: background 0.3s;
+    }
+    .header-left { display:flex; align-items:center; gap:20px; }
+    .header-left img { border-radius:50%; width:150px; height:150px; border:3px solid var(--accent); }
+    header h1 { margin:0; font-size:clamp(2rem,5vw,3rem); color: var(--fg); }
+    header h2 { margin:0; font-size:clamp(1.2rem,3vw,1.8rem); color: var(--subtext); }
+
+    /* Header Right */
+    .header-right { display:flex; align-items:center; gap:1rem; }
+    .header-right a, .header-right button {
+      background:none; border:none; color:var(--fg); font-size:1.3rem; cursor:pointer;
+      transition: color 0.3s;
+    }
+    .header-right a:hover, .header-right button:hover { color: var(--accent); }
+    .resume-btn {
+      display:inline-flex; align-items:center; gap:0.3rem;
+      background: var(--accent); color:#fff; padding:0.4em 0.8em;
+      border-radius:4px; text-decoration:none; font-size:0.9rem;
+      transition: filter 0.3s;
+    }
+    .resume-btn:hover { filter: brightness(0.9); }
+
+    /* Skip link */
+    .skip-link {
+      position:absolute; top:-40px; left:0;
+      background:var(--accent); color:#fff; padding:8px;
+      z-index:200; text-decoration:none; transition: top 0.3s;
+    }
+    .skip-link:focus { top:0; }
+
+    /* Sections */
+    section { margin-bottom:30px; }
+    h3 {
+      color: var(--accent); border-bottom:1px solid #444;
+      padding-bottom:5px; margin-bottom:15px;
+    }
+
+    /* Skills Cards */
+    .skills-cards {
+      display:grid; gap:1rem;
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      margin-top:1rem;
+    }
+    .skill-card {
+      background: var(--card-bg); padding:1rem; border-radius:8px;
+      text-align:center; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Contact */
+    .contact { text-align:center; margin-top:10px; }
+    .contact i { margin-right:8px; }
+
+    /* Company Logo Styling & reset */
+.company-logo {
+  width:80px; height:80px; object-fit:contain;
+  max-width: 60px; max-height: 60px;
+  vertical-align:middle; margin-left:14px;
+  background:transparent !important; padding:0 !important;
+  border-radius:0 !important; box-shadow:none !important;
+}
+
+/* Ensure logo background matches dark theme */
+/* Fill transparent areas with dark-mode background */
+.dark .company-logo {
+  width:80px; height:80px; object-fit:contain;
+  max-width: 60px; max-height: 60px;
+  vertical-align:middle; margin-left:14px;
+  background:transparent !important; padding:0 !important;
+  border-radius:0 !important; box-shadow:none !important;
+}
+
+@media print {
+      header, .header-right, .skip-link { display:none!important; }
+      body { background:#fff; color:#000; }
+      .container { width:100%; padding:0; }
+      .skills-cards { grid-template-columns: 1fr 1fr !important; }
+    }
+  
+/* Hover feedback for top-right icons */
+.header-right a:hover i {
+  color: var(--accent, #3399ff);
+  transition: color 0.3s ease;
+}
+
+/* Typography enhancement for better readability */
+p {
+  line-height: 1.6;
+}
+
+/* Mobile responsive nav */
+nav {
+  display: flex;
+  justify-content: center;
+  background: var(--bg-color);
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+nav a {
+  margin: 0 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#summary">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+</nav>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="main" class="container">
+    <header>
+      <div class="header-left">
+        <img loading="lazy" class="profile-photo" src="harvey-photo.jpg" alt="Harvey Koia">
+        <div>
+          <h1>Harvey Koia</h1>
+          <h2>Electrical Wholesale Specialist</h2>
+        </div>
+      </div>
+      <div class="header-right">
+        <a href="mailto:harveykoia@gmail.com" aria-label="Email Harvey"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="http://linkedin.com/in/harveykoia" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="resume.pdf" download class="resume-btn"><i class="fas fa-download" aria-hidden="true"></i> Resume</a>
+        <button id="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon" aria-hidden="true"></i></button>
+      </div>
+    </header>
+
+    <div class="contact">
+      <p><i class="fas fa-phone" aria-hidden="true"></i> 022 164 0216 | <i class="fas fa-envelope" aria-hidden="true"></i> harveykoia@gmail.com</p>
+    </div>
+
+    <section>
+      <h3>Professional Summary</h3>
+      <p>Senior Counter Sales specialist at Active Electrical Suppliers, leveraging deep expertise in switchgear, distribution boards, and wiring solutions to deliver tailored quotes and expert technical guidance. Collaborates closely with trade professionals and manufacturers to streamline procurement processes and resolve complex supply challenges with precision and reliability. Passionate about sustainable product adoption and team mentorship, fostering continuous improvement to uphold service excellence and build enduring industry relationships.</p>
+    </section>
+
+    <section id="skills">
+      <h3>Key Skills</h3>
+      <div class="skills-cards">
+        <div class="skill-card"><i class="fas fa-tools" aria-hidden="true"></i><h4>Product Expertise</h4><p>Mastery of switchgear, distribution boards & wiring solutions.</p></div>
+        <div class="skill-card"><i class="fas fa-chart-line" aria-hidden="true"></i><h4>Solution Driven Sales</h4><p>Tailored quoting, upselling & customer focused consultative selling.</p></div>
+        <div class="skill-card"><i class="fas fa-handshake" aria-hidden="true"></i><h4>Relationship Building</h4><p>Cultivating trust with tradespeople, clients & suppliers.</p></div>
+        <div class="skill-card"><i class="fas fa-boxes" aria-hidden="true"></i><h4>Logistics & Inventory</h4><p>Streamlining stock control, order management & fulfillment processes.</p></div>
+        <div class="skill-card"><i class="fas fa-users" aria-hidden="true"></i><h4>Team Leadership</h4><p>Mentoring colleagues and fostering high performance collaboration.</p></div>
+        <div class="skill-card"><i class="fas fa-lightbulb" aria-hidden="true"></i><h4>Creative Problem Solving</h4><p>Innovating solutions to complex supply chain challenges.</p></div>
+        <div class="skill-card"><i class="fas fa-leaf" aria-hidden="true"></i><h4>Sustainability Advocacy</h4><p>Championing eco friendly products and best practices.</p></div>
+        <div class="skill-card"><i class="fas fa-sync-alt" aria-hidden="true"></i><h4>Agility & Adaptability</h4><p>Quickly mastering new tools, technologies & market trends.</p></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h3>Professional Experience</h3>
+      <ul>
+        <li><strong>Senior Counter Sales</strong><br/>
+          <img class="company-logo" loading="lazy" alt="Active Electrical company logo for role display" data-light="active-light.png" data-dark="active-dark.png" src="active-light.png" loading="lazy">
+          Active Electrical | Oct 2023 - Present
+          <ul>
+            <li>Strengthened supplier and manufacturer partnerships, improving product sourcing turnaround.</li>
+            <li>Applied strategic upselling to increase average transaction value.</li>
+            <li>Resolved supply chain issues quickly, maintaining high fulfillment rates.</li>
+            <li>Delivered expert technical advice and support to customers.</li>
+            <li>Promoted sustainable product adoption across the branch.</li>
+          </ul>
+        </li>
+        <li><strong>Counter Sales</strong><br/>
+          <img class="company-logo" loading="lazy" alt="Corys Electrical company logo for role display" data-light="corys-light.png" data-dark="corys-dark.png" src="corys-light.png" loading="lazy">
+          Corys Electrical | Mar 2021 - Oct 2023
+          <ul>
+            <li>Provided technical product advice and consultation.</li>
+            <li>Managed billing and order systems with precision.</li>
+            <li>Cultivated and maintained strong supplier and client relationships.</li>
+            <li>Achieved performance targets through solution-based sales approaches.</li>
+          </ul>
+        </li>
+        <li><strong>Counter Sales</strong><br/>
+          <img class="company-logo" loading="lazy" alt="Ideal Electrical company logo for role display" data-light="ideal-light.png" data-dark="ideal-dark.png" src="ideal-light.png" loading="lazy">
+          Ideal Electrical | Oct 2018 - Mar 2021
+          <ul>
+            <li>Maintained merchandising displays that increased impulse purchases.</li>
+            <li>Supported precise quotations and inventory accuracy.</li>
+            <li>Contributed to cross-selling during seasonal promotions.</li>
+          </ul>
+        </li>
+        <li><strong>Assistant Manager</strong><br/>
+          <img class="company-logo" loading="lazy" alt="Jaycar Electronics company logo for role display" data-light="jaycar-light.png" data-dark="jaycar-dark.png" src="jaycar-light.png" loading="lazy">
+          Jaycar Electronics | Aug 2016 - Oct 2018
+          <ul>
+            <li>Oversaw daily store operations to boost sales performance.</li>
+            <li>Trained and mentored store staff for improved customer service.</li>
+            <li>Enhanced inventory processes to reduce shrinkage.</li>
+            <li>Analyzed sales data to optimize product placements.</li>
+          </ul>
+        </li>
+        <li><strong>Sales Assistant</strong><br/>
+          <img class="company-logo" loading="lazy" alt="Jaycar Electronics company logo for role display" data-light="jaycar-light.png" data-dark="jaycar-dark.png" src="jaycar-light.png" loading="lazy">
+          Jaycar Electronics | Jul 2010 - Aug 2016
+          <ul>
+            <li>Delivered expert customer service and product recommendations.</li>
+            <li>Maintained POS accuracy and managed stock levels.</li>
+            <li>Supported storewide promotions and trained new hires.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>References</h3>
+      <p><strong>Matthew Austin</strong><br>Branch Manager, Jaycar Electronics<br>021 035 2092</p>
+      <p><strong>Ryan Kennard</strong><br>Support Specialist, NZTA<br>022 130 1996</p>
+    </section>
+  </div>
+
+  <!-- Theme Toggle & Logo Swap -->
+  <script>
+    const btn = document.getElementById('theme-toggle'), icon = btn.querySelector('i'), htmlEl = document.documentElement;
+    function updateLogos(isDark) {
+      document.querySelectorAll('.company-logo').forEach(img => {
+        img.src = isDark ? img.dataset.dark : img.dataset.light;
+      });
+    }
+    (function() {
+      const saved = localStorage.theme, prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = saved==='dark'||(!saved&&prefers);
+      if(isDark){ htmlEl.classList.add('dark'); icon.classList.replace('fa-moon','fa-sun'); }
+      updateLogos(isDark);
+    })();
+    btn.addEventListener('click',()=> {
+      const isDark = htmlEl.classList.toggle('dark');
+      localStorage.theme = isDark?'dark':'light';
+      icon.classList.replace(isDark?'fa-moon':'fa-sun', isDark?'fa-sun':'fa-moon');
+      updateLogos(isDark);
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  document.querySelectorAll('section').forEach(section => observer.observe(section));
+</script>
+
+<script>
+  const topButton = document.createElement("button");
+  topButton.id = "topBtn";
+  topButton.title = "Back to top";
+  topButton.innerText = "↑";
+  document.body.appendChild(topButton);
+
+  window.onscroll = function () {
+    topButton.style.display = document.documentElement.scrollTop > 100 ? "block" : "none";
+  };
+
+  topButton.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+</script>
+
+
+<footer style="text-align:center; padding:20px; font-size:0.9rem; color:#aaa;">
+  <p>© <span id="year"></span> Harvey Koia</p>
+
+<section id="contact" class="reveal" style="margin-top:40px;">
+  <h3>Contact Me</h3>
+  <form action="https://formsubmit.co/harveykoia@gmail.com" method="POST" style="display:grid; gap:1rem; max-width:600px; margin:auto;">
+    <!-- CAPTCHA setting enabled -->
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="https://harveykoia.github.io/thank-you.html">
+    <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border:1px solid var(--subtext); border-radius:4px; background:var(--bg); color:var(--fg); font-size:1rem;">
+    <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border:1px solid var(--subtext); border-radius:4px; background:var(--bg); color:var(--fg); font-size:1rem;">
+    <textarea name="message" rows="5" placeholder="Your Message" required style="padding:10px; border:1px solid var(--subtext); border-radius:4px; background:var(--bg); color:var(--fg); font-size:1rem;"></textarea>
+    <button type="submit" style="padding:0.8em 1.2em; background:var(--accent); color:white; border:none; border-radius:4px; font-size:1rem; cursor:pointer;">
+      Send Message
+    </button>
+  </form>
+</section>
+
+</footer>
+
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
