@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- Mobile theme-color meta tags -->
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#1e1e1e" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<!-- 1. SEO & Social-Share Meta Tags -->
+<meta content="Senior Counter Sales at Active Electrical Suppliers. Expert in switchgear, distribution boards &amp; wiring solutions." name="description"/>
+<meta content="Harvey Koia – Electrical Wholesale Specialist" property="og:title"/>
+<meta content="Expert counter sales professional delivering tailored quotes and technical guidance in NZ’s electrical wholesale sector." property="og:description"/>
+<meta content="https://harveykoia.github.io/og-image.png" property="og:image"/>
+<!-- 2. Favicon -->
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<title>Harvey Koia | Electrical Wholesale Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+    /* Smooth scroll for in-page anchors */
+    html { scroll-behavior: smooth; }
+
+    /* Theme Variables */
+    :root {
+      --bg: #ffffff;
+      --fg: #000000;
+      --accent: #00bcd4;
+      --subtext: #666666;
+      --header-bg: #f9f9f9;
+      --card-bg: #f9f9f9;
+    }
+    .dark {
+      --bg: #1e1e1e;
+      --fg: #e0e0e0;
+      --accent: #00bcd4;
+      --subtext: #999999;
+      --header-bg: #2a2a2a;
+      --card-bg: #2a2a2a;
+    }
+
+    /* Base Styles */
+    body {
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    /* 3. Sticky Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background: var(--header-bg);
+      padding: 20px;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    header img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      border: 3px solid var(--accent);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: var(--fg);
+    }
+    header h2 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--subtext);
+    }
+
+    /* Header Right (Icons & Toggle) */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header-right a,
+    .header-right button {
+      font-size: 1.3rem;
+      color: var(--fg);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .header-right a:hover,
+    .header-right button:hover {
+      color: var(--accent);
+    }
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.4em 0.8em;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: filter 0.3s ease;
+    }
+    .resume-btn:hover {
+      filter: brightness(0.9);
+    }
+
+    /* Section Headings */
+    h3 {
+      color: var(--accent);
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+
+    /* Skill Cards */
+    .skills-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .skill-card {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .skill-card h4 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      color: var(--fg);
+    }
+    .skill-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--subtext);
+    }
+
+    /* Contact Info */
+    .contact {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .contact i {
+      margin-right: 8px;
+    }
+
+    /* Skip-to-Content Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: #fff;
+      padding: 8px;
+      z-index: 20;
+      transition: top 0.3s;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Remove image outlines */
+    section img {
+      box-shadow: none !important;
+      border: none !important;
+      outline: none !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+  
+/* Company Logo card reset */
+.company-logo, .company-logo img {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-left: 14px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+</style>
+</link></head>
+<body>
+<!-- 6. Skip-to-Content Link -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="container" id="main">
+<header>
+<div class="header-left">
+<!-- 5. Lazy-load Profile Image -->
+<img alt="Harvey Koia" loading="lazy" src="harvey-photo.jpg"/>
+<div>
+<h1>Harvey Koia</h1>
+<h2>Electrical Wholesale Specialist</h2>
+</div>
+</div>
+<div class="header-right">
+<a aria-label="Email Harvey" href="mailto:harveykoia@gmail.com" title="Email Harvey">
+<i class="fas fa-envelope"></i>
+</a>
+<a aria-label="LinkedIn" href="http://linkedin.com/in/harveykoia" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+<i class="fab fa-linkedin"></i>
+</a>
+<a aria-label="Download Resume" class="resume-btn" download="" href="resume.pdf" title="Download Resume">
+<i class="fas fa-download"></i> Resume
+        </a>
+<button aria-label="Toggle theme" id="theme-toggle" title="Toggle theme">
+<i class="fas fa-moon"></i>
+</button>
+</div>
+</header>
+<div class="contact">
+<p>
+<i class="fas fa-phone"></i> 022 164 0216 |
+        <i class="fas fa-envelope"></i> harveykoia@gmail.com
+      </p>
+</div>
+<section>
+<h3>Professional Summary</h3>
+<p>Senior Counter Sales specialist at Active Electrical Suppliers, leveraging deep expertise in switchgear, distribution boards, and wiring solutions to deliver tailored quotes and expert technical guidance. Collaborates closely with trade professionals and manufacturers to streamline procurement processes and resolve complex supply challenges with precision and reliability. Passionate about sustainable product adoption and team mentorship, fostering continuous improvement to uphold service excellence and build enduring industry relationships.</p>
+</section>
+<section id="skills">
+<h3>Key Skills</h3>
+<div class="skills-cards">
+<div class="skill-card">
+<i class="fas fa-tools"></i>
+<h4>Product Expertise</h4>
+<p>Mastery of switchgear, distribution boards &amp; wiring solutions.</p>
+</div>
+<div class="skill-card">
+<i class="fas fa-chart-line"></i>
+<h4>Solution Driven Sales</h4>
+<p>Tailored quoting, upselling &amp; customer focused consultative selling.</p>
+</div>
+<div class="skill-card">
+<i class="fas fa-handshake"></i>
+<h4>Relationship Building</h4>
+<p>Cultivating trust with tradespeople, clients &amp; suppliers.</p>
+</div>
+<div class="skill-card">
+<i class="fas fa-boxes"></i>
+<h4>Logistics &amp; Inventory</h4>
+<p>Streamlining stock control, order management &amp; fulfillment processes.</p>
+</div>
+<div class="skill-card">
+<i class="fas fa-users"></i>
+<h4>Team Leadership</h4>
+<p>Mentoring colleagues and fostering high performance collaboration.</p>
+</div>
+<div class="skill-card">
+<i class="fas fa-lightbulb"></i>
+<h4>Creative Problem Solving</h4>
+<p>Innovating solutions to complex supply chain challenges.</p>
+</div>
+<div class="skill-card">
+<i class="fas fa-leaf"></i>
+<h4>Sustainability Advocacy</h4>
+<p>Championing eco friendly products and best practices.</p>
+</div>
+<div class="skill-card">
+<i class="fas fa-sync-alt"></i>
+<h4>Agility &amp; Adaptability</h4>
+<p>Quickly mastering new tools, technologies &amp; market trends.</p>
+</div>
+</div>
+</section>
+<section>
+<h3>Professional Experience</h3>
+<ul>
+<li><strong>Senior Counter Sales</strong><br/>
+<img class="company-logo" alt="Active Electrical logo" src="active-light.png"/></picture>
+          Active Electrical | Oct 2023 - Present
+          <ul>
+<li>Strengthened supplier and manufacturer partnerships, improving product sourcing turnaround.</li>
+<li>Applied strategic upselling to increase average transaction value.</li>
+<li>Resolved supply chain issues quickly, maintain high fulfillment rates.</li>
+<li>Delivered expert technical advice and support to customers.</li>
+<li>Promoted sustainable product adoption across the branch.</li>
+</ul>
+</li>
+<li><strong>Counter Sales</strong><br/>
+<img class="company-logo" alt="Corys Electrical logo" src="corys-light.png"/></picture>
+          Corys Electrical | Oct 2018 - Mar 2021
+          <ul>
+<li>Provided technical product advice and consultation.</li>
+<li>Managed billing and order systems with precision.</li>
+<li>Cultivated and maintained strong supplier and client relationships.</li>
+<li>Achieved performance targets through solution-based sales approaches.</li>
+</ul>
+</li>
+<li><strong>Counter Sales</strong><br/>
+<img class="company-logo" alt="Ideal Electrical logo" src="ideal-light.png"/></picture>
+          Ideal Electrical | Oct 2018 - Mar 2021
+          <ul>
+<li>Maintained merchandising displays that increased impulse purchases.</li>
+<li>Supported precise quotations and inventory accuracy.</li>
+<li>Contributed to cross-selling during seasonal promotions.</li>
+</ul>
+</li>
+<li><strong>Assistant Manager</strong><br/>
+<img class="company-logo" alt="Jaycar Electronics logo" src="jaycar-light.png"/></picture>
+          Jaycar Electronics | Aug 2016 - Oct 2018
+          <ul>
+<li>Oversaw daily store operations to boost sales performance.</li>
+<li>Trained and mentored store staff for improved customer service.</li>
+<li>Enhanced inventory processes to reduce shrinkage.</li>
+<li>Analyzed sales data to optimize product placements.</li>
+</ul>
+</li>
+<li><strong>Sales Assistant</strong><br/>
+<img class="company-logo" alt="Jaycar Electronics logo" src="jaycar-light.png"/></picture>
+          Jaycar Electronics | Jul 2010 - Aug 2016
+          <ul>
+<li>Delivered expert customer service and product recommendations.</li>
+<li>Maintained POS accuracy and managed stock levels.</li>
+<li>Supported storewide promotions and trained new hires.</li>
+</ul>
+</li>
+</ul>
+</section>
+<section>
+<h3>References</h3>
+<p><strong>Matthew Austin</strong><br/>Branch Manager, Jaycar Electronics<br/>021 035 2092</p>
+<p><strong>Ryan Kennard</strong><br/>Support Specialist, NZTA<br/>022 130 1996</p>
+</section>
+</div>
+<script>
+    const btn = document.getElementById('theme-toggle');
+    const icon = btn.querySelector('i');
+    const htmlEl = document.documentElement;
+    (function() {
+      const saved = localStorage.theme;
+      const prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const useDark = saved === 'dark' || (!saved && prefers);
+      if (useDark) {
+        htmlEl.classList.add('dark');
+        icon.classList.replace('fa-moon','fa-sun');
+      }
+    })();
+    btn.addEventListener('click', () => {
+      const isDark = htmlEl.classList.toggle('dark');
+      localStorage.theme = isDark ? 'dark' : 'light';
+      icon.classList.replace(
+        isDark ? 'fa-moon' : 'fa-sun',
+        isDark ? 'fa-sun' : 'fa-moon'
+      );
+    });
+  </script>
+</body>
+</html>
